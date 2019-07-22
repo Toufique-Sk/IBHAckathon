@@ -1,3 +1,4 @@
 #Don't track this folders
-/__pycache
+/*/__pycache__
 /repair
+/projectrepair/__pycache__/

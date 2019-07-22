@@ -33,7 +33,7 @@ class Shop(Base):
         return ret
 
 class User(Base):
-    __tablename__ = 'shop'
+    __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
     lati = Column(String)
     longi = Column(String)

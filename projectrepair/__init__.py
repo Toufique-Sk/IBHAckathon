@@ -1,4 +1,5 @@
 import os
+import sys
 
 from flask import Flask
 
@@ -18,13 +19,7 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-    from . import model
-    shop=model.Shop()
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        
-        return shop.selectAll()
-    
+    from .controller.shop_controller import shopController
+    app.register_blueprint(shopController)
 
     return app

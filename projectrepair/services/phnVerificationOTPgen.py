@@ -9,7 +9,9 @@ def randomString(stringLength=10):
 totp=pyotp.TOTP(str(randomString()))
 print (totp.now())
 from twilio.rest import Client
-client = Client("**hidden**", "**hidden**")
+client = Client("ACeb71e9e2fbe4c14efa04c2e47fc6a82b", "5b65b294e374b358a73e15bb0e0730c6")
+
+#need to get a number to send sms to unverified nos.
 client.messages.create(to="+918167597272", 
                        from_="+14432956802", 
                        body=totp.now())
