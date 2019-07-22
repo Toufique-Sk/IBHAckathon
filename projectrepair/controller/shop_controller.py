@@ -1,11 +1,11 @@
 
 
 from flask import Blueprint
-shopController = Blueprint('shopController','projectrepair')
+shopController = Blueprint('shopController',__name__)
 
 
-from .. import model
-shop=model.Shop()
+from ..models import shop_model
+shop=shop_model.Shop()
 # a simple page that says hello
     
     
