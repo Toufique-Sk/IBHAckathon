@@ -8,7 +8,7 @@ Base = declarative_base()
 
 from sqlalchemy import Column, Integer, String
 class Shop(Base):
-    __tablename__ = 'Shop'
+    __tablename__ = 'shop'
     id = Column(Integer, primary_key=True)
     lati = Column(String)
     longi = Column(String)
@@ -21,5 +21,17 @@ class Shop(Base):
 
     def __repr__(self):
         return "<User(name='%s', fullname='%s', nickname='%s')>" % (self.name, self.fullname, self.nickname)
+    def selectAll(self):
+        conn=engine.connect()
+        res=conn.execute("select * from shop")
+        lis=res.fetchall()
+        ret={}
+        for i in lis:
+            k=i[0]
+            v=i[1:]
+            ret[k]=v
+        return ret
+
+
 
 

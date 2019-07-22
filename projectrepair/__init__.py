@@ -18,11 +18,13 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-
+    from . import model
+    shop=model.Shop()
     # a simple page that says hello
     @app.route('/hello')
     def hello():
-        return 'Hello, World 1'
-    from . import model
+        
+        return shop.selectAll()
+    
 
     return app
