@@ -9,7 +9,7 @@ def randomString(stringLength=10):
 totp=pyotp.TOTP(str(randomString()))
 print (totp.now())
 from twilio.rest import Client
-client = Client("ACeb71e9e2fbe4c14efa04c2e47fc6a82b", "5b65b294e374b358a73e15bb0e0730c6")
+client = Client("**hidden**", "**hidden**")
 client.messages.create(to="+918167597272", 
                        from_="+14432956802", 
                        body=totp.now())
