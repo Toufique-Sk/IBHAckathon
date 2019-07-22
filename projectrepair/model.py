@@ -32,6 +32,17 @@ class Shop(Base):
             ret[k]=v
         return ret
 
+class User(Base):
+    __tablename__ = 'shop'
+    id = Column(Integer, primary_key=True)
+    lati = Column(String)
+    longi = Column(String)
+    emailid = Column(String)
+    phnno=Column(Integer)
+    city=Column(String)
+    state=Column(String)
+    password=Column(String(128))  ## this must be hashed
+    rating=Column(Integer)
 
 
 
